@@ -54,8 +54,9 @@ public class Fair {
             chosenAmounts.add( amountsList[i] );
         }
 
-        // Loop through the winners from index 1 while adding the remaining amounts
-        for( int i = 1; i < winners.size(); ++i ){
+        // Loop through the winners from index (length - 1) while adding the remaining amounts
+        // Starting in reverse gives the last winner in the previous loop a chance to get more
+        for( int i = ( winners.size() - 1); i > 0; --i ){
             // Loop checking if amount selected is already chosen
             for( int j = 0; j < amountsList.length; ++j ) {
                 // boolean to check if amount is chosen
